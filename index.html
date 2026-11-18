@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking Paket Wisata</title>
+
+
+  <!-- Font Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+  <main class="container">
+    <div class="kartu-utama row g-0">
+
+
+      <!-- kiri-->
+      <aside class="col-lg-5 panel-kiri">
+        <p class="nama-brand">Jelajah Nusantara</p>
+        <h1 class="judul-panel">Liburan seru ke destinasi favorit Indonesia.</h1>
+        <p class="teks-panel">Pilih paket, isi data, dan pesananmu langsung tercatat.</p>
+
+
+        <ul class="daftar-fasilitas">
+          <li><i class="bi bi-geo-alt"></i> Bali, Bromo, Raja Ampat, Labuan Bajo</li>
+          <li><i class="bi bi-people"></i> Pemandu wisata berpengalaman</li>
+          <li><i class="bi bi-camera"></i> Spot foto terbaik di setiap destinasi</li>
+          <li><i class="bi bi-wallet2"></i> Harga jelas, tanpa biaya tersembunyi</li>
+        </ul>
+      </aside>
+
+
+      <!-- ========== form dan invoice ========== -->
+      <div class="col-lg-7 panel-kanan">
+
+
+        <!-- ===== BAGIAN 1: FORM ===== -->
+        <section id="bagianForm">
+          <h2 class="judul-bagian">Data pemesan</h2>
+          <p class="sub">Lengkapi data berikut untuk memesan paket wisata.</p>
+
+
+          <!-- novalidate = matikan popup bawaan browser, error ditampilkan lewat JavaScript -->
+          <form id="formBooking" novalidate>
+
+
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama pemesan</label>
+              <input type="text" id="nama" class="form-control" placeholder="Contoh: Budi Santoso" required>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="paket" class="form-label">Pilihan paket</label>
+              <select id="paket" class="form-select">
+                <option value="">-- Pilih paket --</option>
+                <option value="Bali Escape">Bali Escape - 3 Hari 2 Malam - Rp 2.450.000</option>
+                <option value="Bromo Sunrise Trip">Bromo Sunrise Trip - 2 Hari 1 Malam - Rp 1.350.000</option>
+                <option value="Raja Ampat Discovery">Raja Ampat Discovery - 4 Hari 3 Malam - Rp 5.750.000</option>
+                <option value="Labuan Bajo Explorer">Labuan Bajo Explorer - 3 Hari 2 Malam - Rp 3.950.000</option>
+              </select>
+            </div>
+
+
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="jumlah" class="form-label">Jumlah orang</label>
+                <input type="number" id="jumlah" class="form-control" placeholder="Contoh: 3" min="1" max="20" required>
+              </div>
+              <div class="col-6">
+                <label for="berangkat" class="form-label">Tanggal berangkat</label>
+                <input type="date" id="berangkat" class="form-control" required>
+              </div>
+            </div>
+
+
+            <div id="pesanError" class="alert alert-danger d-none"></div>
+
+
+            <button type="submit" class="btn btn-villa w-100">Pesan Sekarang</button>
+          </form>
+        </section>
+
+
+        <!-- ===== BAGIAN 2: INVOICE (awalnya disembunyikan dengan d-none) ===== -->
+        <section id="bagianInvoice" class="d-none">
+
+
+          <div class="d-flex justify-content-between align-items-start mb-1">
+            <h2 class="judul-bagian mb-0">Invoice Booking</h2>
+            <span class="badge-status"><i class="bi bi-check-circle-fill"></i> Terkonfirmasi</span>
+          </div>
+          <p class="sub">Terima kasih, pesananmu sudah kami catat.</p>
+
+
+          <div class="ringkasan">
+            Atas nama <strong id="outNama"></strong> sudah booking
+            paket <strong id="outPaket"></strong>,
+            berangkat tanggal <strong id="outBerangkat"></strong>
+
+
+          </div>
+
+
+          <table class="table tabel-invoice">
+            <tbody>
+              <tr>
+                <td>Durasi</td>
+                <td class="text-end" id="outDurasi"></td>
+              </tr>
+              <tr>
+                <td>Jumlah peserta</td>
+                <td class="text-end" id="outPeserta"></td>
+              </tr>
+              <tr>
+                <td>Harga per orang</td>
+                <td class="text-end" id="outHarga"></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <div class="kotak-total">
+            <span>Total bayar</span>
+            <strong id="outTotal"></strong>
+          </div>
+
+
+          <button type="button" id="tombolKembali" class="btn btn-outline-villa w-100">Booking Lagi</button>
+        </section>
+
+
+      </div>
+    </div>
+  </main>
+
+
+  <script src="script.js"></script>
+</body>
+
+
+</html>

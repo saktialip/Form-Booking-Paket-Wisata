@@ -1,0 +1,221 @@
+/* ===== Warna yang dipakai (disimpan di variabel supaya mudah diganti) ===== */
+:root {
+  --hijau: #14463f;
+  --hijau-tua: #0e3530;
+  --emas: #c9a45c;
+  --abu-latar: #eef1ef;
+  --abu-teks: #5f6b68;
+  --garis: #dfe5e2;
+}
+
+
+body {
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+  background-color: var(--abu-latar);
+  color: #1d2a27;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;      /* kartu berada di tengah layar */
+  padding: 32px 0;
+}
+
+
+/* ===== Kartu utama ===== */
+.kartu-utama {
+  max-width: 920px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;         /* sudut panel kiri ikut membulat */
+  box-shadow: 0 20px 50px rgba(20, 70, 63, 0.15);
+}
+
+
+/* ===== Panel kiri ===== */
+.panel-kiri {
+  background: linear-gradient(160deg, var(--hijau) 0%, var(--hijau-tua) 100%);
+  color: white;
+  padding: 40px 32px;
+}
+
+
+.nama-brand {
+  color: var(--emas);
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 36px;
+}
+
+
+.judul-panel {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+
+.teks-panel {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 32px;
+}
+
+
+.daftar-fasilitas {
+  list-style: none;         /* hilangkan titik bawaan */
+  padding: 0;
+  margin: 0;
+}
+
+
+.daftar-fasilitas li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 15px;
+}
+
+
+.daftar-fasilitas i {
+  color: var(--emas);
+  margin-right: 10px;
+}
+
+
+/* ===== Panel kanan ===== */
+.panel-kanan {
+  padding: 40px 36px;
+}
+
+
+.judul-bagian {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--hijau);
+}
+
+
+.sub {
+  color: var(--abu-teks);
+  margin-bottom: 24px;
+}
+
+
+/* ===== Form ===== */
+.form-label {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+
+.form-control,
+.form-select {
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--garis);
+  background-color: #fafbfa;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--hijau);
+  box-shadow: 0 0 0 4px rgba(20, 70, 63, 0.12);   /* cincin hijau tipis saat diklik */
+  background-color: white;
+}
+
+
+/* ===== Tombol ===== */
+.btn-villa {
+  background-color: var(--hijau);
+  color: white;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+
+.btn-villa:hover {
+  background-color: var(--hijau-tua);
+  color: white;
+}
+
+
+.btn-outline-villa {
+  border: 2px solid var(--hijau);
+  color: var(--hijau);
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+
+.btn-outline-villa:hover {
+  background-color: var(--hijau);
+  color: white;
+}
+
+
+/* ===== Invoice ===== */
+.badge-status {
+  background-color: #e3f3ea;
+  color: #1c7a47;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+
+.ringkasan {
+  background-color: #f6f1e4;
+  border-left: 4px solid var(--emas);
+  padding: 16px;
+  border-radius: 10px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+
+.tabel-invoice td {
+  padding: 12px 0;
+  border-color: var(--garis);
+  color: var(--abu-teks);
+}
+
+
+.tabel-invoice td:last-child {
+  color: #1d2a27;
+  font-weight: 500;
+}
+
+
+.kotak-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--hijau);
+  color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+}
+
+
+.kotak-total strong {
+  font-size: 22px;
+  color: var(--emas);
+}
+
+
+/* ===== Tampilan HP ===== */
+@media (max-width: 991px) {
+  .panel-kiri,
+  .panel-kanan {
+    padding: 28px 22px;
+  }
+  .nama-brand {
+    margin-bottom: 16px;
+  }
+}
